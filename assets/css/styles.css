@@ -47,3 +47,48 @@ a {
 li {
   list-style: none;
 }
+
+/* Button component **********************************************************/
+.btn {
+  text-transform: uppercase;
+  font-size: var(--font-14);
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+.btn.btn--primary {
+  color: var(--color-white);
+  padding: 1.6rem 3.2rem;
+  background-color: var(--color-brand-green);
+}
+
+.btn--primary .icon {
+  font-size: 2rem;
+  padding-right: 1rem;
+}
+
+.btn--primary:hover {
+  background-color: var(--color-brand-green-hover);
+}
+
+.btn.btn--secondary {
+  color: var(--color-brand-green);
+  border: 1px solid var(--color-brand-green);
+  background-color: var(--color-white);
+  padding: 1rem 2.4rem;
+}
+
+.btn.btn--secondary:hover {
+  background-color: var(--color-brand-green);
+  color: var(--color-white);
+}
+
+/* 
+<button class="btn btn--primary">
+  <span class="fa-brands fa-whatsapp icon"></span>Agende sua consulta
+</button>
+<button class="btn btn--secondary">Agendar consulta</button>
+*/
