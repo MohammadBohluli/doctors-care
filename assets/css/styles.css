@@ -92,3 +92,78 @@ li {
 </button>
 <button class="btn btn--secondary">Agendar consulta</button>
 */
+
+/* Navbar **********************************************************/
+.nav {
+  background-color: var(--color-brand-green-light-1);
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+  /* tmp */
+  height: 7.2rem;
+}
+
+.wrapper-nav {
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  text-align: center;
+  padding-top: 2rem;
+  background-color: var(--color-brand-green);
+  transition: all 0.5s;
+
+  /* tmp */
+  /* width: 100%; */
+  /* display: none; */
+}
+
+.hidden {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.logo {
+  font-size: 2.7rem;
+}
+
+.logo span {
+  color: var(--color-brand-green);
+  font-weight: bold;
+}
+
+.nav .icon {
+  font-size: var(--font-34);
+  color: var(--color-brand-green);
+  cursor: pointer;
+}
+
+.menu-bar {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.list .list__item {
+  font-size: var(--font-24);
+  font-weight: bold;
+  margin: 4rem 0;
+}
+
+.list .list__item a {
+  color: var(--color-white);
+}
+
+.nav .btn--secondary {
+  font-size: var(--font-18);
+  padding: 1.6rem 3.2rem;
+  margin-bottom: 7rem;
+}
+
+.social-icons * {
+  color: var(--color-white);
+  font-size: var(--font-24);
+  padding: 0 2rem;
+}
