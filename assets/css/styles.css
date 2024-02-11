@@ -20,6 +20,9 @@
   --font-40: 4rem;
   --font-48: 4.8rem;
   --font-52: 5.2rem;
+
+  /* var */
+  --height-nav: 7.2rem;
 }
 
 /* CSS Base **********************************************************/
@@ -96,11 +99,14 @@ li {
 /* Navbar **********************************************************/
 .nav {
   background-color: var(--color-brand-green-light-1);
+}
+
+.nav .container {
   display: flex;
   justify-content: space-between;
   padding: 2rem 1.5rem;
   /* tmp */
-  height: 7.2rem;
+  height: var(--height-nav);
 }
 
 .wrapper-nav {
@@ -113,10 +119,6 @@ li {
   padding-top: 2rem;
   background-color: var(--color-brand-green);
   transition: all 0.5s;
-
-  /* tmp */
-  /* width: 100%; */
-  /* display: none; */
 }
 
 .hidden {
@@ -166,4 +168,64 @@ li {
   color: var(--color-white);
   font-size: var(--font-24);
   padding: 0 2rem;
+}
+
+@media screen and (min-width: 1366px) {
+  .nav .container {
+    align-items: center;
+    padding: 0 1.5rem;
+  }
+  .social-icons,
+  .menu-bar {
+    display: none;
+  }
+
+  .wrapper-nav {
+    position: static;
+    background-color: transparent;
+    display: flex;
+    height: auto;
+    padding-top: 0;
+    gap: 280px;
+  }
+
+  .list {
+    display: flex;
+  }
+  .list .list__item a {
+    color: var(--color-brand-green);
+  }
+
+  .list .list__item {
+    font-size: var(--font-16);
+    font-weight: bold;
+    margin: 0 2rem;
+    display: flex;
+    align-items: center;
+    height: var(--height-nav);
+    border-bottom: 2px solid transparent;
+  }
+
+  .list .list__item:hover {
+    color: var(--color-white);
+    border-color: var(--color-brand-green);
+  }
+
+  .nav .btn--secondary {
+    font-size: var(--font-14);
+    margin-bottom: 0;
+    background-color: transparent;
+    align-self: center;
+  }
+
+  .hidden {
+    height: inherit;
+    opacity: 1;
+    overflow: visible;
+  }
+}
+
+.container {
+  max-width: 1366px;
+  margin: 0 auto;
 }
