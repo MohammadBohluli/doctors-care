@@ -51,6 +51,38 @@ li {
   list-style: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-gray-headline);
+}
+
+h1 {
+  font-size: var(--font-34);
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 0 1.5rem;
+}
+
+.grid {
+  display: grid;
+}
+
+@media screen and (min-width: 1366px) {
+  .grid-2x1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Button component **********************************************************/
 .btn {
   text-transform: uppercase;
@@ -66,6 +98,9 @@ li {
   color: var(--color-white);
   padding: 1.6rem 3.2rem;
   background-color: var(--color-brand-green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn--primary .icon {
@@ -104,13 +139,13 @@ li {
 .nav .container {
   display: flex;
   justify-content: space-between;
-  padding: 2rem 1.5rem;
   /* tmp */
+  padding: 2rem 1.5rem;
   height: var(--height-nav);
 }
 
 .nav-content {
-  position: fixed;
+  position: absolute;
   top: 72px;
   left: 0;
   right: 0;
@@ -219,13 +254,74 @@ li {
   }
 
   .hidden {
-    height: inherit;
+    height: auto;
     opacity: 1;
     overflow: visible;
   }
 }
 
-.container {
-  max-width: 1366px;
-  margin: 0 auto;
+/* Hero section ************************************************************/
+.hero-section {
+  background-color: var(--color-brand-green-light-1);
+}
+
+.hero {
+  text-align: center;
+}
+
+.hero__content {
+  margin-bottom: 7rem;
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__content > *:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.hero__wellcome {
+  font-size: var(--font-14);
+  font-weight: bold;
+  color: var(--color-brand-green);
+  letter-spacing: 1px;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.hero__title {
+  font-weight: bold;
+  line-height: 130%;
+}
+
+.hero__description {
+  font-size: var(--font-18);
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--color-gray-paragraph);
+  padding: 0 1rem;
+}
+
+.hero__img {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 1366px) {
+  .hero__title {
+    font-size: var(--font-52);
+  }
+  .hero__content {
+    align-items: flex-start;
+  }
+
+  .hero__title,
+  .hero__description {
+    text-align: left;
+  }
+
+  .hero__description {
+    padding: 0 7rem 0 0;
+  }
 }
