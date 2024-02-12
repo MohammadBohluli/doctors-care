@@ -39,7 +39,7 @@ html {
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
 }
 
@@ -109,7 +109,7 @@ li {
   height: var(--height-nav);
 }
 
-.wrapper-nav {
+.nav-content {
   position: fixed;
   top: 72px;
   left: 0;
@@ -180,7 +180,7 @@ li {
     display: none;
   }
 
-  .wrapper-nav {
+  .nav-content {
     position: static;
     background-color: transparent;
     display: flex;
