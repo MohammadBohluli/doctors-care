@@ -53,15 +53,24 @@ li {
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   color: var(--color-gray-headline);
 }
 
 h1 {
   font-size: var(--font-34);
+  font-weight: 700;
+  line-height: 130%;
+}
+
+h2 {
+  font-size: var(--font-30);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--font-24);
+  font-weight: 700;
 }
 
 .container {
@@ -81,6 +90,23 @@ h1 {
   .grid-2x1 {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .grid-3x1 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  h1 {
+    font-size: var(--font-52);
+  }
+
+  h2 {
+    font-size: var(--font-40);
+  }
+}
+
+::selection {
+  color: var(--color-white);
+  background: var(--color-brand-green);
 }
 
 /* Button component **********************************************************/
@@ -149,6 +175,7 @@ h1 {
   top: 72px;
   left: 0;
   right: 0;
+  z-index: 10;
   height: 100vh;
   text-align: center;
   padding-top: 2rem;
@@ -291,11 +318,6 @@ h1 {
   text-transform: uppercase;
 }
 
-.hero__title {
-  font-weight: bold;
-  line-height: 130%;
-}
-
 .hero__description {
   font-size: var(--font-18);
   font-weight: 400;
@@ -306,12 +328,11 @@ h1 {
 
 .hero__img {
   max-width: 100%;
+  /* FIXME: compute padding based on statistics*/
+  padding-bottom: 20.17rem;
 }
 
 @media screen and (min-width: 1366px) {
-  .hero__title {
-    font-size: var(--font-52);
-  }
   .hero__content {
     align-items: flex-start;
   }
@@ -323,5 +344,73 @@ h1 {
 
   .hero__description {
     padding: 0 7rem 0 0;
+  }
+
+  .hero__img {
+    /* FIXME: compute padding based on statistics*/
+    padding-bottom: 0;
+  }
+}
+
+/* statistics section ************************************************************/
+.statistics-section {
+  position: relative;
+}
+
+.statistics {
+  background-color: var(--color-brand-beige);
+  border: 1px solid var(--color-brand-green-light-1);
+  margin: 0 auto;
+  border-radius: 0.6rem;
+  /* TODO: better solution with */
+  width: 327px;
+
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.statistics > * {
+  padding: 3rem 0;
+}
+
+.statistics__box {
+  text-align: center;
+
+  /* for divider */
+  position: relative;
+}
+
+.statistics__box span {
+  font-size: var(--font-48);
+  font-weight: 700;
+  line-height: 130%;
+  color: var(--color-gray-headline);
+}
+
+.statistics__box p {
+  font-size: var(--font-16);
+  color: var(--color-brand-green);
+  line-height: 150%;
+}
+
+@media screen and (min-width: 1366px) {
+  .statistics {
+    /* TODO: better solution with */
+    width: 1120px;
+  }
+
+  .statistics__box:not(:last-child):after {
+    content: '';
+    position: absolute;
+    background-color: var(--color-brand-green);
+    width: 1.5px;
+    height: 50%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    opacity: 0.3;
   }
 }
