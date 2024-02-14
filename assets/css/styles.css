@@ -409,7 +409,6 @@ h3 {
 /* service section ************************************************************/
 .service-section {
   background-color: var(--color-brand-green-light-2);
-  padding: 30rem 0 20rem 0;
 }
 
 .service-section h2 {
@@ -420,6 +419,7 @@ h3 {
 
 .service-section .container {
   text-align: center;
+  padding: 30rem 0 20rem 0;
 }
 
 .service__cards {
@@ -467,4 +467,37 @@ h3 {
 
 .title--primary {
   color: var(--color-brand-green);
+}
+
+/* about section ************************************************************/
+.about-section {
+  background-color: var(--color-brand-beige);
+}
+
+.about-section .container {
+  padding: 20rem 0;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.about__img {
+  width: 100%;
+}
+
+.about__content h2 {
+  margin-bottom: 2.5rem;
+}
+
+.about__description {
+  font-size: var(--font-16);
+  line-height: 150%;
+  color: var(--color-gray-paragraph);
+  margin-bottom: 5rem;
+}
+
+@media screen and (min-width: 1366px) {
+  .about__content {
+    order: 1;
+  }
 }
