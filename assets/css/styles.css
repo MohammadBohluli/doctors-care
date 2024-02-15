@@ -229,7 +229,7 @@ h3 {
 .social-icons * {
   color: var(--color-white);
   font-size: var(--font-24);
-  padding: 0 2rem;
+  padding-right: 3rem;
 }
 
 @media screen and (min-width: 1366px) {
@@ -538,4 +538,43 @@ h3 {
 
 .contact__img {
   width: 100%;
+}
+
+/* Footer ************************************************************/
+.footer {
+  background-color: var(--color-brand-green);
+  color: var(--color-brand-beige);
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 5rem 0;
+}
+
+.footer .logo span,
+.footer .logo p {
+  color: var(--color-white);
+  font-size: var(--font-48);
+}
+
+.footer__text .tmp {
+  font-size: var(--font-16);
+}
+
+.footer__text > * {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 1366px) {
+  .footer .container .social-icons {
+    display: block;
+  }
+
+  .footer .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
