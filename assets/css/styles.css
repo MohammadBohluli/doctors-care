@@ -501,3 +501,41 @@ h3 {
     order: 1;
   }
 }
+
+/* contact section ************************************************************/
+.contact-section .container {
+  padding: 12rem 0;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.contact__content > * {
+  margin-bottom: 2.5rem;
+}
+/* TODO: solution for text to next line */
+.information-box .icon {
+  width: var(--font-24);
+  height: var(--font-24);
+  color: var(--color-brand-green);
+}
+
+.information-box > * {
+  padding: 1rem 0;
+}
+
+.info-address,
+.info-email {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.info-email p,
+.info-address p {
+  font-size: var(--font-16);
+  line-height: 150%;
+}
+
+.contact__img {
+  width: 100%;
+}
