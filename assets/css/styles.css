@@ -453,6 +453,13 @@ h3 {
   background-color: var(--color-white);
   padding: 2.4rem;
   text-align: left;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.service__card:hover {
+  transform: translateY(-1rem);
+  box-shadow: 0 0 10px 0 rgba(0, 133, 111, 0.5);
 }
 
 .service__card .icon {
