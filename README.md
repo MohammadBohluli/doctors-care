@@ -1,10 +1,10 @@
 <h1 align="center" id="title">Doctor Care 🧑‍⚕️</h1>
 
+❗UI Design and link, end of this README file (thanks for UI, Jonas Milan❤️ )
 
 ## 👨‍💻online project link 
 
 🔗 [Link](https://github.com/MohammadBohluli)
-![photo_2024-02-18_00-53-34](https://github.com/MohammadBohluli/doctors-care/assets/84536105/eff12e5a-6707-41cf-bbda-91e318e3353a)
 
 
 <h2>💻 Built with</h2>
@@ -36,3 +36,9 @@ Double Click index.html
 
 <p>✅Done</p>
 
+
+<h2> 🎨Design </h2>
+
+- [Link](https://www.figma.com/community/file/1102912263666619803/doctorcare)
+
+![photo_2024-02-18_00-53-34](https://github.com/MohammadBohluli/doctors-care/assets/84536105/eff12e5a-6707-41cf-bbda-91e318e3353a)
