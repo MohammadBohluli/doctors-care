@@ -7,6 +7,9 @@ const hero = document.querySelector(".hero-section");
 const heroImg = document.querySelector(".hero__img");
 const heroContent = document.querySelector(".hero__content");
 const allImgLazy = document.querySelectorAll(".lazy-img");
+const counters = document.querySelectorAll(".statistics__box span");
+const statisticsSection = document.querySelector(".statistics-section");
+
 /***********************************************************************/
 /********************** Toggle Navbar Menu */
 /***********************************************************************/
@@ -40,17 +43,19 @@ const replacing = function (element, oldClass, newClass) {
   element.classList.replace(oldClass, newClass);
 };
 
-const revealingSection = function (entries) {
+const revealingSection = function (entries, observer) {
   const [entry] = entries;
 
   if (!entry.isIntersecting) return;
   replacing(heroImg, "fade-right", "fade-in");
   replacing(heroContent, "fade-left", "fade-in");
+
+  observer.unobserve(hero);
 };
 
 const sectionObserver = new IntersectionObserver(revealingSection, {
   root: null,
-  threshold: 0.01,
+  threshold: 0,
 });
 sectionObserver.observe(hero);
 
@@ -74,3 +79,37 @@ const lazyBlurImgObserver = new IntersectionObserver(lazyBlurImg, {
 allImgLazy.forEach((img) => {
   lazyBlurImgObserver.observe(img);
 });
+
+/***********************************************************************/
+/********************** Counter zero to Target */
+/***********************************************************************/
+const countingAnimation = function () {
+  counters.forEach((count) => {
+    let startValue = 0;
+    let endValue = parseInt(count.dataset.count);
+    let duration = Math.floor(1000 / endValue);
+
+    const counter = setInterval(function () {
+      startValue++;
+      count.textContent = `+${startValue}`;
+      if (startValue === endValue) clearInterval(counter);
+    }, duration);
+  });
+};
+
+const counter = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return;
+
+  countingAnimation();
+
+  observer.unobserve(statisticsSection);
+};
+
+const counterObserver = new IntersectionObserver(counter, {
+  root: null,
+  threshold: 0.5,
+});
+
+counterObserver.observe(statisticsSection);
