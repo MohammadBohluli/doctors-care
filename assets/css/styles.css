@@ -1,4 +1,6 @@
-/* Variables **********************************************************/
+/***********************************************************************/
+/********************** Variables */
+/***********************************************************************/
 :root {
   /* Color palette */
   --color-brand-green: #00856f;
@@ -23,9 +25,19 @@
 
   /* var */
   --height-nav: 7.2rem;
+
+  /* hamburger menu */
+  --bur-line-width: 35px;
+  --bur-line-height: 5px;
+  --bur-line-gap: 5px;
+  --hamburger-height: calc(
+    var(--bur-line-height) * 3 + var(--bur-line-gap) * 2
+  );
 }
 
-/* CSS Base **********************************************************/
+/***********************************************************************/
+/********************** Base CSS */
+/***********************************************************************/
 *,
 *::after,
 *::before {
@@ -320,6 +332,61 @@ h3 {
 }
 
 /***********************************************************************/
+/********************** Hamburger Menu */
+/***********************************************************************/
+.hamburger-menu {
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--bur-line-gap);
+  width: max-content;
+  cursor: pointer;
+}
+@media screen and (min-width: 1366px) {
+  .hamburger-menu {
+    display: none;
+  }
+}
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: "";
+  width: var(--bur-line-width);
+  height: var(--bur-line-height);
+  background-color: var(--color-brand-green);
+  border-radius: 20px;
+  transform-origin: left center;
+  transition:
+    opacity 0.7s,
+    width 0.7s,
+    rotate 0.7s;
+}
+
+.hamburger-menu input {
+  appearance: none;
+  outline: none;
+  pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bur-line-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bur-line-height) / 2);
+}
+
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+/***********************************************************************/
 /********************** Hero Section */
 /***********************************************************************/
 .hero-section {
@@ -593,7 +660,7 @@ h3 {
   font-size: var(--font-48);
 }
 
-.footer__text .tmp {
+.footer__text .copyright {
   font-size: var(--font-16);
 }
 
@@ -631,6 +698,11 @@ h3 {
   color: var(--color-white);
 }
 
+.sticky .hamburger-menu::before,
+.sticky .hamburger-menu::after,
+.sticky .hamburger-menu input {
+  background-color: var(--color-white);
+}
 @media screen and (min-width: 1366px) {
   .sticky .list .list__item:hover {
     border-color: var(--color-white);
