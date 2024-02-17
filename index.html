@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Google font ----------------------------->
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap"
@@ -57,7 +58,7 @@
     <!-- start hero section --------------------------------------------------------------->
     <section class="section hero-section" id="hero">
       <div class="hero grid grid-2x1 container">
-        <div class="hero__content">
+        <div class="hero__content fade-left">
           <p class="title title--primary">BOAS-VINDAS A DOCTORCARE 👋</p>
           <h1 class="hero__title">
             Assistência médica simplificada para todos
@@ -78,7 +79,7 @@
           <img
             src="assets/images/person-mobile.svg"
             alt="person photo"
-            class="hero__img"
+            class="hero__img fade-right"
           />
         </picture>
       </div>
@@ -247,5 +248,9 @@
       </div>
     </footer>
     <!-- end footer ----------------------------------------------------------------->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
