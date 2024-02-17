@@ -15,6 +15,7 @@ Technologies used in the project:
 *   Pure CSS
 *   Pure Javascript (😍)
 *   No library and No Framework (😎)
+*   Mobile-first Design and Responsive
 
 
 <h2>🛠️ run project locally</h2>
