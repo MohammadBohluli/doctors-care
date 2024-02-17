@@ -6,7 +6,7 @@ const navHeight = nav.getBoundingClientRect().height;
 const hero = document.querySelector(".hero-section");
 const heroImg = document.querySelector(".hero__img");
 const heroContent = document.querySelector(".hero__content");
-
+const allImgLazy = document.querySelectorAll(".lazy-img");
 /***********************************************************************/
 /********************** Toggle Navbar Menu */
 /***********************************************************************/
@@ -40,16 +40,12 @@ const replacing = function (element, oldClass, newClass) {
   element.classList.replace(oldClass, newClass);
 };
 
-const revealingSection = function (entries, observer) {
+const revealingSection = function (entries) {
   const [entry] = entries;
 
-  if (entry.isIntersecting) {
-    replacing(heroImg, "fade-right", "fade-in");
-    replacing(heroContent, "fade-left", "fade-in");
-  } else {
-    replacing(heroImg, "fade-in", "fade-right");
-    replacing(heroContent, "fade-in", "fade-left");
-  }
+  if (!entry.isIntersecting) return;
+  replacing(heroImg, "fade-right", "fade-in");
+  replacing(heroContent, "fade-left", "fade-in");
 };
 
 const sectionObserver = new IntersectionObserver(revealingSection, {
@@ -57,3 +53,24 @@ const sectionObserver = new IntersectionObserver(revealingSection, {
   threshold: 0.01,
 });
 sectionObserver.observe(hero);
+
+/***********************************************************************/
+/********************** Lazy Blur Effect */
+/***********************************************************************/
+
+const lazyBlurImg = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove("lazy-img");
+  observer.unobserve(entry.target);
+};
+
+const lazyBlurImgObserver = new IntersectionObserver(lazyBlurImg, {
+  root: null,
+  threshold: 1,
+});
+
+allImgLazy.forEach((img) => {
+  lazyBlurImgObserver.observe(img);
+});
